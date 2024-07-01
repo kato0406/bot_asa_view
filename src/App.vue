@@ -48,9 +48,12 @@
     <div class="card w-50 h-50" v-if="page === 4">
       <div class="card-header">④ 前営業日作成のチケット確認</div>
       <div class="card-body">
+        <p>※月曜のみ確認</p>
         <p>
-          <a :href="previous_business_day_tasks_url" target="_blank">チケットURL</a><br>
-          お客様起票のチケットがないかや優先度が高となっているチケットがあれば担当者がキャッチアップできているか、担当者や期限日が設定されているかの確認をすることでチケット管理できるようにする        </p>
+          <a href="https://wollllll.github.io/bot_count_issues/?tab=1" target="_blank">チケット集計ツール君</a><br />
+          <a :href="complete_tasks_url" target="_blank">チケットURL</a><br />
+          1ヶ月以上残っているチケットはお客様起票の場合は先方が忘れている可能性があるため打診する必要があるかの確認やお客様起票以外の場合は完了にできるチケットはないかの確認をすることで放置チケットが無いようにする
+        </p>
       </div>
       <div class="card-footer text-end">
         <button @click="prevPage" type="button" class="btn">前のページ</button>
