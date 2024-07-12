@@ -63,8 +63,12 @@
         <p>※月曜のみ確認</p>
         <p>
           <a href="https://wollllll.github.io/bot_count_issues/?tab=1" target="_blank">チケット集計ツール君</a><br />
-          <a :href="complete_tasks_url" target="_blank">チケットURL</a><br />
+          <a :href="complete_tasks_url" target="_blank">処理済みチケットURL</a><br />
           1ヶ月以上残っているチケットはお客様起票の場合は先方が忘れている可能性があるため打診する必要があるかの確認やお客様起票以外の場合は完了にできるチケットはないかの確認をすることで放置チケットが無いようにする
+        </p>
+        <p>
+          <a href="https://docs.google.com/spreadsheets/d/13F7JiilPWd-gsVlIoX-oRbpqM2edaoSzYGB7JECElOY/edit#gid=2080367252プレビュー
+https://valeur.backlog.jp/alias/wiki/1247821" target="_blank">勉強会URL</a><br />
         </p>
       </div>
       <div class="card-footer text-end">
