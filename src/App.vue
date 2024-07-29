@@ -50,7 +50,8 @@
       <div class="card-body">
         <p>
           <a :href="previous_business_day_tasks_url" target="_blank">チケットURL</a><br>
-          お客様起票のチケットがないかや優先度が高となっているチケットがあれば担当者がキャッチアップできているか、担当者や期限日が設定されているかの確認をすることでチケット管理できるようにする        </p>
+          お客様起票のチケットがないかや優先度が高となっているチケットがあれば担当者がキャッチアップできているか、担当者や期限日が設定されているかの確認をすることでチケット管理できるようにする
+        </p>
       </div>
       <div class="card-footer text-end">
         <button @click="prevPage" type="button" class="btn">前のページ</button>
@@ -58,13 +59,16 @@
       </div>
     </div>
     <div class="card w-50 h-50" v-if="page === 5">
-      <div class="card-header">⑤ チケット全体状況確認</div>
+      <div class="card-header">⑤ チケット全体状況確認 ※月曜のみ確認</div>
       <div class="card-body">
-        <p>※月曜のみ確認</p>
         <p>
-          <a href="https://wollllll.github.io/bot_count_issues/?tab=1" target="_blank">チケット集計ツール君</a><br />
+          <a href="https://wollllll.github.io/bot_count_issues/?tab=0" target="_blank">チケット集計ツール君</a><br />
+          全体のチケット状況を見て違和感のある所を司会者が指摘
+          例) ○さんの担当チケットが多い、○さんの期限切れチケットが多いなど
+        </p>
+        <p>
           <a :href="complete_tasks_url" target="_blank">処理済みチケットURL</a><br />
-          1ヶ月以上残っているチケットはお客様起票の場合は先方が忘れている可能性があるため打診する必要があるかの確認やお客様起票以外の場合は完了にできるチケットはないかの確認をすることで放置チケットが無いようにする
+          1ヶ月以上残っているチケットはお客様起票の場合は先方が忘れている可能性があるため、打診する必要があるかの確認や、お客様起票以外の場合は完了にできるチケットはないかの確認をすることで放置チケットが無いようにする
         </p>
         <p>
           <a href="https://docs.google.com/spreadsheets/d/13F7JiilPWd-gsVlIoX-oRbpqM2edaoSzYGB7JECElOY/edit#gid=2080367252プレビュー
@@ -92,6 +96,7 @@ https://valeur.backlog.jp/alias/wiki/1247821" target="_blank">勉強会URL</a><b
     <div class="card w-50 h-50" v-if="page === 7">
       <div class="card-header">⑦ 運動</div>
       <div class="card-body">
+        <p>杉山さんお願いします</p>
       </div>
       <div class="card-footer text-end">
         <button @click="prevPage" type="button" class="btn">前のページ</button>
