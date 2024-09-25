@@ -79,10 +79,6 @@ https://valeur.backlog.jp/alias/wiki/1247821" target="_blank">勉強会URL</a><b
     <div class="card w-50 h-50" v-if="page === 6">
       <div class="card-header">⑥ 全体確認</div>
       <div class="card-body">
-        <p>
-          健康診断<br>
-          <a href="https://docs.google.com/spreadsheets/d/1dtpwrU48JVUT4PGYN0kellqaEkl8G6wG21Yh8Nnl2Vg/edit#gid=1366779378">https://docs.google.com/spreadsheets/d/1dtpwrU48JVUT4PGYN0kellqaEkl8G6wG21Yh8Nnl2Vg/edit#gid=1366779378</a>
-        </p>
       </div>
       <div class="card-footer text-end">
         <button @click="prevPage" type="button" class="btn">前のページ</button>
