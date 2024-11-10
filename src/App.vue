@@ -62,7 +62,7 @@
       <div class="card-header">⑤ チケット全体状況確認 ※月曜のみ確認</div>
       <div class="card-body">
         <p>
-          <a href="https://wollllll.github.io/bot_count_issues" target="_blank">チケット集計ツール君</a><br />
+          <a href="https://kato0406.github.io/bot_count_issues/" target="_blank">チケット集計ツール君</a><br />
           全体のチケット状況を見て違和感のある所を司会者が指摘
           例) ○さんの担当チケットが多い、○さんの期限切れチケットが多いなど
         </p>
