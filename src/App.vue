@@ -37,6 +37,7 @@
       <div class="card-header">② 当日期限のチケット確認</div>
       <div class="card-body">
         <p>
+          <a target="_blank" href="https://valeur.backlog.jp/FindIssueAllOver.action?allOver=true&limit=20&limitDate.unspecified=false&limitDateRange.begin=2025%2F07%2F15&limitDateRange.end=2025%2F07%2F15&offset=0&order=true&projectId=90404&projectId=92327&projectId=106799&projectId=107506&projectId=111843&projectId=111905&projectId=125699&projectId=139380&projectId=143275&projectId=154956&projectId=162798&projectId=164065&projectId=181478&projectId=182111&projectId=193241&projectId=198448&projectId=200798&projectId=213127&projectId=48115&simpleSearch=false&sort=LIMIT_DATE&startDate.unspecified=false&statusId=1&statusId=31202&statusId=31205&statusId=31211&statusId=31213&statusId=31215&statusId=31220&statusId=31229&statusId=31231&statusId=31235&statusId=32747&statusId=43839&statusId=43848&statusId=48521&statusId=50223&statusId=2&statusId=23368&statusId=31214&statusId=25086&statusId=25088&statusId=25090&statusId=6742&statusId=11614&statusId=12586&statusId=24098&statusId=31204&statusId=31230&statusId=38629&statusId=43840&statusId=12560&statusId=31212">仮URL</a>
           <a :href="today_tasks_url" target="_blank">チケットURL</a><br>
         </p>
         <ul>
@@ -54,6 +55,7 @@
       <div class="card-header">③ 期限切れのチケット確認</div>
       <div class="card-body">
         <p>
+          <a target="_blank" href="https://valeur.backlog.jp/FindIssueAllOver.action?allOver=true&limit=20&limitDate.unspecified=false&limitDateRange.end=2025%2F07%2F14&offset=0&order=true&projectId=90404&projectId=92327&projectId=106799&projectId=107506&projectId=111843&projectId=111905&projectId=125699&projectId=139380&projectId=143275&projectId=154956&projectId=162798&projectId=164065&projectId=181478&projectId=182111&projectId=193241&projectId=198448&projectId=200798&projectId=213127&projectId=48115&simpleSearch=false&sort=LIMIT_DATE&startDate.unspecified=false&statusId=1&statusId=31202&statusId=31205&statusId=31211&statusId=31213&statusId=31215&statusId=31220&statusId=31229&statusId=31231&statusId=31235&statusId=32747&statusId=43839&statusId=43848&statusId=48521&statusId=50223&statusId=2&statusId=23368&statusId=31214&statusId=25086&statusId=25088&statusId=25090&statusId=6742&statusId=11614&statusId=12586&statusId=24098&statusId=31204&statusId=31230&statusId=38629&statusId=43840&statusId=12560&statusId=31212">仮URL</a>
           <a :href="overdue_tasks_url" target="_blank">チケットURL</a>
         </p>
         <ul>
@@ -73,6 +75,7 @@
       <div class="card-header">④ 前営業日作成のチケット確認</div>
       <div class="card-body">
         <p>
+          <a target="_blank" href="https://valeur.backlog.jp/FindIssueAllOver.action?allOver=true&createdRange.begin=2025%2F07%2F14&createdRange.end=2025%2F07%2F14&limit=20&limitDate.unspecified=false&offset=0&order=true&projectId=90404&projectId=92327&projectId=106799&projectId=107506&projectId=111843&projectId=111905&projectId=125699&projectId=139380&projectId=143275&projectId=162798&projectId=164065&projectId=181478&projectId=182111&projectId=193241&projectId=198448&projectId=200798&simpleSearch=false&sort=LIMIT_DATE&startDate.unspecified=false&statusId=1&statusId=2&statusId=31202&statusId=31201&statusId=12560&statusId=31234&statusId=31235&statusId=31215&statusId=31214&statusId=12586&statusId=31231&statusId=31230&statusId=31213&statusId=6742&statusId=31212&statusId=31229&statusId=31228&statusId=31205&statusId=31204&statusId=31211&statusId=31210&statusId=11614&statusId=31220&statusId=24098&statusId=23368&statusId=25086&statusId=25088&statusId=25090&statusId=43839&statusId=43840&statusId=32747&statusId=38629&statusId=43848&statusId=48521&statusId=50223">仮URL</a>
           <a :href="previous_business_day_tasks_url" target="_blank">チケットURL</a>
         </p>
         <ul>
