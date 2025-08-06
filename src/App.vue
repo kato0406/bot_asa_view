@@ -98,7 +98,7 @@
           例) ○さんの担当チケットが多い、○さんの期限切れチケットが多いなど
         </p>
         <p>
-          <a :href="complete_tasks_url" target="_blank">処理済みチケットURL</a><br />
+          <a :href="completeTasksUrl" target="_blank">処理済みチケットURL</a><br />
           処理済確認は更新日でソートする
           <ul>
             <li>お客様が長期間保持しているチケットがあるか</li>
@@ -153,16 +153,16 @@ import {ref} from "vue";
 const query = new URLSearchParams(window.location.search);
 
 const page = ref(Number(query.get('page') ?? 1))
-const today_tasks_url = ref()
-const overdue_tasks_url = ref()
-const previous_business_day_tasks_url = ref()
-const complete_tasks_url = ref()
+const todayTasksUrl = ref()
+const overdueTasksUrl = ref()
+const previousBusinessDayTasksUrl = ref()
+const completeTasksUrl = ref()
 const youtubeUrl = ref('https://www.youtube.com/embed/G6IR5nziFvI?start=4&end=255&autoplay=1')
-const backlog_url = 'https://valeur.backlog.jp/FindIssueAllOver.action?sort=LIMIT_DATE&order=false&simpleSearch=false&allOver=true&startDate.unspecified=false&limitDate.unspecified=false&';
-const base_api_sheet_url = 'https://sheets.googleapis.com/v4/spreadsheets/1AB2-Z7k3JQf8yGnk74SofcnXCDQVowOCXNKqqoPVGus/values/?sheet!?range?key=AIzaSyBhzOrlCWAfu2nBXzE6-YMbk4ktEE8Fbx4';
+const backlogUrl = 'https://valeur.backlog.jp/FindIssueAllOver.action?sort=LIMIT_DATE&order=false&simpleSearch=false&allOver=true&startDate.unspecified=false&limitDate.unspecified=false&';
+const baseApiSheetUrl = 'https://sheets.googleapis.com/v4/spreadsheets/1AB2-Z7k3JQf8yGnk74SofcnXCDQVowOCXNKqqoPVGus/values/?sheet!?range?key=AIzaSyBhzOrlCWAfu2nBXzE6-YMbk4ktEE8Fbx4';
 
 const generateGetSheetUrl = (sheet, range) => {
-  return base_api_sheet_url.replace('?sheet', sheet).replace('?range', range)
+  return baseApiSheetUrl.replace('?sheet', sheet).replace('?range', range)
 }
 
 const generateBaseBacklogUrl = async () => {
@@ -187,8 +187,8 @@ const generateBaseBacklogUrl = async () => {
   }
 
   return {
-    url: `${backlog_url}${projectIds.map(id => `projectId=${id}&`).join('')}${statusIds.map(id => `statusId=${id}&`).join('')}`,
-    mondayUrl: `${backlog_url}${projectIds.map(id => `projectId=${id}&`).join('')}${completeStatusIds.map(id => `statusId=${id}&`).join('')}`
+    url: `${backlogUrl}${projectIds.map(id => `projectId=${id}&`).join('')}${statusIds.map(id => `statusId=${id}&`).join('')}`,
+    mondayUrl: `${backlogUrl}${projectIds.map(id => `projectId=${id}&`).join('')}${completeStatusIds.map(id => `statusId=${id}&`).join('')}`
   }
 }
 
@@ -233,10 +233,10 @@ const prevPage = () => {
   const yesterday = date.subtract(1, 'd').format('YYYY/MM/DD')
   const threeDaysAgo = date.subtract(3, 'd').format('YYYY/MM/DD')
 
-  today_tasks_url.value = `${url}limitDateRange.begin=${today}&limitDateRange.end=${today}`
-  overdue_tasks_url.value = `${url}limitDateRange.end=${yesterday}`
-  previous_business_day_tasks_url.value = `${url}createdRange.begin=${dayjs().day() === 1 ? threeDaysAgo : yesterday}&createdRange.end=${today}`
-  complete_tasks_url.value = mondayUrl
+  todayTasksUrl.value = `${url}limitDateRange.begin=${today}&limitDateRange.end=${today}`
+  overdueTasksUrl.value = `${url}limitDateRange.end=${yesterday}`
+  previousBusinessDayTasksUrl.value = `${url}createdRange.begin=${dayjs().day() === 1 ? threeDaysAgo : yesterday}&createdRange.end=${today}`
+  completeTasksUrl.value = mondayUrl
 
   switch (date.day()) {
     case 1:
