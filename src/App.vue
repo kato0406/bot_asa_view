@@ -4,12 +4,13 @@
       <div class="card-header">朝会</div>
       <div class="card-body">
         <p>
-          チケット確認 Notion<br />
+          チケット確認 Notion<br/>
           <a href="https://www.notion.so/1763159a7ca1809bb23bcb753548cd34" target="_blank">https://www.notion.so/1763159a7ca1809bb23bcb753548cd34</a>
         </p>
         <p>
-          設定 スプレッドシート<br />
-          <a href="https://docs.google.com/spreadsheets/d/1AB2-Z7k3JQf8yGnk74SofcnXCDQVowOCXNKqqoPVGus/edit#gid=508960181" target="_blank">https://docs.google.com/spreadsheets/d/1AB2-Z7k3JQf8yGnk74SofcnXCDQVowOCXNKqqoPVGus/edit#gid=508960181</a>
+          設定 スプレッドシート<br/>
+          <a href="https://docs.google.com/spreadsheets/d/1AB2-Z7k3JQf8yGnk74SofcnXCDQVowOCXNKqqoPVGus/edit#gid=508960181"
+             target="_blank">https://docs.google.com/spreadsheets/d/1AB2-Z7k3JQf8yGnk74SofcnXCDQVowOCXNKqqoPVGus/edit#gid=508960181</a>
         </p>
       </div>
       <div class="card-footer text-end">
@@ -21,7 +22,8 @@
       <div class="card-header">① 出席確認</div>
       <div class="card-body">
         <p>
-          <a href="https://docs.google.com/spreadsheets/d/1SunBnF6VW01kVOve5EFyxIBU69G0cMOetKqyUcGXVGw/edit#gid=0" target="_blank">https://docs.google.com/spreadsheets/d/1SunBnF6VW01kVOve5EFyxIBU69G0cMOetKqyUcGXVGw/edit#gid=0</a>
+          <a href="https://docs.google.com/spreadsheets/d/1SunBnF6VW01kVOve5EFyxIBU69G0cMOetKqyUcGXVGw/edit#gid=0"
+             target="_blank">https://docs.google.com/spreadsheets/d/1SunBnF6VW01kVOve5EFyxIBU69G0cMOetKqyUcGXVGw/edit#gid=0</a>
         </p>
         <p>
           出席確認をしましょう<br>
@@ -37,8 +39,7 @@
       <div class="card-header">② 当日期限のチケット確認</div>
       <div class="card-body">
         <p>
-          <a target="_blank" href="https://valeur.backlog.jp/FindIssueAllOver.action?allOver=true&limit=20&limitDate.unspecified=false&limitDateRange.begin=2025%2F07%2F15&limitDateRange.end=2025%2F07%2F15&offset=0&order=true&projectId=90404&projectId=92327&projectId=106799&projectId=107506&projectId=111843&projectId=111905&projectId=125699&projectId=215551&projectId=139380&projectId=143275&projectId=154956&projectId=162798&projectId=164065&projectId=181478&projectId=182111&projectId=193241&projectId=198448&projectId=200798&projectId=213127&projectId=48115&simpleSearch=false&sort=LIMIT_DATE&startDate.unspecified=false&statusId=1&statusId=31202&statusId=31205&statusId=31211&statusId=31213&statusId=31215&statusId=31220&statusId=31229&statusId=31231&statusId=31235&statusId=32747&statusId=43839&statusId=43848&statusId=48521&statusId=50223&statusId=2&statusId=23368&statusId=31214&statusId=25086&statusId=25088&statusId=25090&statusId=6742&statusId=11614&statusId=12586&statusId=24098&statusId=31204&statusId=31230&statusId=38629&statusId=43840&statusId=12560&statusId=31212">仮URL</a>
-<!--          <a :href="today_tasks_url" target="_blank">チケットURL</a><br>-->
+          <a target="_blank" :href="getTodayTasksUrl">チケットURL</a>
         </p>
         <ul>
           <li>当日期限に設定しているチケットが多い人はいるか（5枚以上持っているなど）</li>
@@ -55,8 +56,7 @@
       <div class="card-header">③ 期限切れのチケット確認</div>
       <div class="card-body">
         <p>
-          <a target="_blank" href="https://valeur.backlog.jp/FindIssueAllOver.action?allOver=true&limit=20&limitDate.unspecified=false&limitDateRange.end=2025%2F07%2F14&offset=0&order=true&projectId=90404&projectId=92327&projectId=106799&projectId=107506&projectId=215551&projectId=111843&projectId=111905&projectId=125699&projectId=139380&projectId=143275&projectId=154956&projectId=162798&projectId=164065&projectId=181478&projectId=182111&projectId=193241&projectId=198448&projectId=200798&projectId=213127&projectId=48115&simpleSearch=false&sort=LIMIT_DATE&startDate.unspecified=false&statusId=1&statusId=31202&statusId=31205&statusId=31211&statusId=31213&statusId=31215&statusId=31220&statusId=31229&statusId=31231&statusId=31235&statusId=32747&statusId=43839&statusId=43848&statusId=48521&statusId=50223&statusId=2&statusId=23368&statusId=31214&statusId=25086&statusId=25088&statusId=25090&statusId=6742&statusId=11614&statusId=12586&statusId=24098&statusId=31204&statusId=31230&statusId=38629&statusId=43840&statusId=12560&statusId=31212">仮URL</a>
-<!--          <a :href="overdue_tasks_url" target="_blank">チケットURL</a>-->
+          <a target="_blank" :href="overdueTasksUrl">チケットURL</a>
         </p>
         <ul>
           <li>担当者でソートした時にたくさんチケット持っている人はいるか</li>
@@ -75,8 +75,7 @@
       <div class="card-header">④ 前営業日作成のチケット確認</div>
       <div class="card-body">
         <p>
-          <a target="_blank" href="https://valeur.backlog.jp/FindIssueAllOver.action?allOver=true&createdRange.begin=2025%2F07%2F14&createdRange.end=2025%2F07%2F14&limit=20&limitDate.unspecified=false&offset=0&order=true&projectId=90404&projectId=92327&projectId=215551&projectId=106799&projectId=107506&projectId=111843&projectId=111905&projectId=125699&projectId=139380&projectId=143275&projectId=162798&projectId=164065&projectId=181478&projectId=182111&projectId=193241&projectId=198448&projectId=200798&simpleSearch=false&sort=LIMIT_DATE&startDate.unspecified=false&statusId=1&statusId=2&statusId=31202&statusId=31201&statusId=12560&statusId=31234&statusId=31235&statusId=31215&statusId=31214&statusId=12586&statusId=31231&statusId=31230&statusId=31213&statusId=6742&statusId=31212&statusId=31229&statusId=31228&statusId=31205&statusId=31204&statusId=31211&statusId=31210&statusId=11614&statusId=31220&statusId=24098&statusId=23368&statusId=25086&statusId=25088&statusId=25090&statusId=43839&statusId=43840&statusId=32747&statusId=38629&statusId=43848&statusId=48521&statusId=50223">仮URL</a>
-<!--          <a :href="previous_business_day_tasks_url" target="_blank">チケットURL</a>-->
+          <a target="_blank" :href="previousBusinessDayTasksUrl">チケットURL</a>
         </p>
         <ul>
           <li>お客様が登録しているチケットがあるか</li>
@@ -93,12 +92,12 @@
       <div class="card-header">⑤ 全体状況確認 ※月曜のみ確認</div>
       <div class="card-body">
         <p>
-          <a href="https://kato0406.github.io/bot_asa_view_vue" target="_blank">チケット集計ツール君</a><br />
+          <a href="https://kato0406.github.io/bot_asa_view_vue" target="_blank">チケット集計ツール君</a><br/>
           全体のチケット状況を見て違和感のある所を司会者が指摘
           例) ○さんの担当チケットが多い、○さんの期限切れチケットが多いなど
         </p>
         <p>
-          <a :href="completeTasksUrl" target="_blank">処理済みチケットURL</a><br />
+          <a :href="completeTasksUrl" target="_blank">処理済みチケットURL</a><br/>
           処理済確認は更新日でソートする
           <ul>
             <li>お客様が長期間保持しているチケットがあるか</li>
@@ -110,7 +109,7 @@
         </p>
         <p>
           <a href="https://docs.google.com/spreadsheets/d/13F7JiilPWd-gsVlIoX-oRbpqM2edaoSzYGB7JECElOY/edit#gid=2080367252プレビュー
-https://valeur.backlog.jp/alias/wiki/1247821" target="_blank">勉強会URL</a><br />
+https://valeur.backlog.jp/alias/wiki/1247821" target="_blank">勉強会URL</a><br/>
         </p>
       </div>
       <div class="card-footer text-end">
@@ -133,8 +132,8 @@ https://valeur.backlog.jp/alias/wiki/1247821" target="_blank">勉強会URL</a><b
       <div class="card-body">
         <p>運動動画の共有</p>
         <p>
-          タブで共有してください<br />
-          <a :href="youtubeUrl" target="_blank">{{ youtubeUrl }}</a>
+          タブで共有してください<br/>
+          <a :href="getYoutubeUrl" target="_blank">{{ getYoutubeUrl }}</a>
         </p>
       </div>
       <div class="card-footer text-end">
@@ -146,51 +145,47 @@ https://valeur.backlog.jp/alias/wiki/1247821" target="_blank">勉強会URL</a><b
 </template>
 
 <script setup>
-import axios from "axios";
+// import axios from "axios";
 import dayjs from "dayjs";
-import {ref} from "vue";
+import {computed, ref} from "vue";
 
 const query = new URLSearchParams(window.location.search);
 
 const page = ref(Number(query.get('page') ?? 1))
-const todayTasksUrl = ref()
-const overdueTasksUrl = ref()
-const previousBusinessDayTasksUrl = ref()
 const completeTasksUrl = ref()
-const youtubeUrl = ref('https://www.youtube.com/embed/G6IR5nziFvI?start=4&end=255&autoplay=1')
-const backlogUrl = 'https://valeur.backlog.jp/FindIssueAllOver.action?sort=LIMIT_DATE&order=false&simpleSearch=false&allOver=true&startDate.unspecified=false&limitDate.unspecified=false&';
-const baseApiSheetUrl = 'https://sheets.googleapis.com/v4/spreadsheets/1AB2-Z7k3JQf8yGnk74SofcnXCDQVowOCXNKqqoPVGus/values/?sheet!?range?key=AIzaSyBhzOrlCWAfu2nBXzE6-YMbk4ktEE8Fbx4';
+// const backlogUrl = 'https://valeur.backlog.jp/FindIssueAllOver.action?sort=LIMIT_DATE&order=false&simpleSearch=false&allOver=true&startDate.unspecified=false&limitDate.unspecified=false&';
+// const baseApiSheetUrl = 'https://sheets.googleapis.com/v4/spreadsheets/1AB2-Z7k3JQf8yGnk74SofcnXCDQVowOCXNKqqoPVGus/values/?sheet!?range?key=AIzaSyBhzOrlCWAfu2nBXzE6-YMbk4ktEE8Fbx4';
 
-const generateGetSheetUrl = (sheet, range) => {
-  return baseApiSheetUrl.replace('?sheet', sheet).replace('?range', range)
-}
+// const generateGetSheetUrl = (sheet, range) => {
+//   return baseApiSheetUrl.replace('?sheet', sheet).replace('?range', range)
+// }
 
-const generateBaseBacklogUrl = async () => {
-  const statusValues = (await axios.get(generateGetSheetUrl('URL', 'E2:G1000'))).data.values
-  const projectValues = (await axios.get(generateGetSheetUrl('URL', 'A2:C1000'))).data.values
-  const statusIds = []
-  const projectIds = []
-  const completeStatusIds = []
-
-  for (const status of statusValues) {
-    if (status[2] === '0') {
-      completeStatusIds.push(status[0])
-    } else {
-      statusIds.push(status[0])
-    }
-  }
-
-  for (const project of projectValues) {
-    if (project[2] === '0') continue
-
-    projectIds.push(project[0])
-  }
-
-  return {
-    url: `${backlogUrl}${projectIds.map(id => `projectId=${id}&`).join('')}${statusIds.map(id => `statusId=${id}&`).join('')}`,
-    mondayUrl: `${backlogUrl}${projectIds.map(id => `projectId=${id}&`).join('')}${completeStatusIds.map(id => `statusId=${id}&`).join('')}`
-  }
-}
+// const generateBaseBacklogUrl = async () => {
+//   const statusValues = (await axios.get(generateGetSheetUrl('URL', 'E2:G1000'))).data.values
+//   const projectValues = (await axios.get(generateGetSheetUrl('URL', 'A2:C1000'))).data.values
+//   const statusIds = []
+//   const projectIds = []
+//   const completeStatusIds = []
+//
+//   for (const status of statusValues) {
+//     if (status[2] === '0') {
+//       completeStatusIds.push(status[0])
+//     } else {
+//       statusIds.push(status[0])
+//     }
+//   }
+//
+//   for (const project of projectValues) {
+//     if (project[2] === '0') continue
+//
+//     projectIds.push(project[0])
+//   }
+//
+//   return {
+//     url: `${backlogUrl}${projectIds.map(id => `projectId=${id}&`).join('')}${statusIds.map(id => `statusId=${id}&`).join('')}`,
+//     mondayUrl: `${backlogUrl}${projectIds.map(id => `projectId=${id}&`).join('')}${completeStatusIds.map(id => `statusId=${id}&`).join('')}`
+//   }
+// }
 
 const nextPage = () => {
   const url = new URL(window.location.href);
@@ -224,36 +219,58 @@ const prevPage = () => {
   window.history.pushState({}, '', url.href);
 }
 
-(async () => {
-  const base = await generateBaseBacklogUrl()
-  const url = base.url
-  const mondayUrl = base.mondayUrl
+const getYoutubeUrl = computed(() => {
   const date = dayjs()
-  const today = dayjs().format('YYYY/MM/DD')
-  const yesterday = date.subtract(1, 'd').format('YYYY/MM/DD')
-  const threeDaysAgo = date.subtract(3, 'd').format('YYYY/MM/DD')
-
-  todayTasksUrl.value = `${url}limitDateRange.begin=${today}&limitDateRange.end=${today}`
-  overdueTasksUrl.value = `${url}limitDateRange.end=${yesterday}`
-  previousBusinessDayTasksUrl.value = `${url}createdRange.begin=${dayjs().day() === 1 ? threeDaysAgo : yesterday}&createdRange.end=${today}`
-  completeTasksUrl.value = mondayUrl
 
   switch (date.day()) {
     case 1:
-      youtubeUrl.value = 'https://www.youtube.com/embed/G6IR5nziFvI?start=4&end=255&autoplay=1'
-      break;
+      return 'https://www.youtube.com/embed/G6IR5nziFvI?start=4&end=255&autoplay=1'
     case 2:
-      youtubeUrl.value = 'https://www.youtube.com/embed/yM14vLOHJco?start=7&end=264&autoplay=1'
-      break
+      return 'https://www.youtube.com/embed/yM14vLOHJco?start=7&end=264&autoplay=1'
     case 3:
-      youtubeUrl.value = 'https://www.youtube.com/embed/RYh_BGDtc-c?start=3&end=210&autoplay=1'
-      break
+      return 'https://www.youtube.com/embed/RYh_BGDtc-c?start=3&end=210&autoplay=1'
     case 4:
-      youtubeUrl.value = 'https://www.youtube.com/embed/oWHPQgdqVcQ?start=10&end=190&autoplay=1'
-      break
+      return 'https://www.youtube.com/embed/oWHPQgdqVcQ?start=10&end=190&autoplay=1'
     case 5:
-      youtubeUrl.value = 'https://www.youtube.com/embed/SjmZGTU9tPM?start=8&end=220&autoplay=1'
-      break
+      return 'https://www.youtube.com/embed/SjmZGTU9tPM?start=8&end=220&autoplay=1'
+    default:
+      return 'https://www.youtube.com/embed/G6IR5nziFvI?start=4&end=255&autoplay=1'
   }
-})()
+})
+
+const getTodayTasksUrl = computed(() => {
+  const today = dayjs().format('YYYY/MM/DD')
+
+  return `https://valeur.backlog.jp/FindIssueAllOver.action?allOver=true&limit=20&limitDate.unspecified=false&limitDateRange.begin=${today}&limitDateRange.end=${today}&offset=0&order=true&projectId=90404&projectId=92327&projectId=106799&projectId=107506&projectId=111843&projectId=111905&projectId=125699&projectId=215551&projectId=139380&projectId=143275&projectId=154956&projectId=162798&projectId=164065&projectId=181478&projectId=182111&projectId=193241&projectId=198448&projectId=200798&projectId=213127&projectId=48115&simpleSearch=false&sort=LIMIT_DATE&startDate.unspecified=false&statusId=1&statusId=31202&statusId=31205&statusId=31211&statusId=31213&statusId=31215&statusId=31220&statusId=31229&statusId=31231&statusId=31235&statusId=32747&statusId=43839&statusId=43848&statusId=48521&statusId=50223&statusId=2&statusId=23368&statusId=31214&statusId=25086&statusId=25088&statusId=25090&statusId=6742&statusId=11614&statusId=12586&statusId=24098&statusId=31204&statusId=31230&statusId=38629&statusId=43840&statusId=12560&statusId=31212`
+});
+
+const overdueTasksUrl = computed(() => {
+  const yesterday = dayjs().subtract(1, 'd').format('YYYY/MM/DD')
+
+  return `https://valeur.backlog.jp/FindIssueAllOver.action?allOver=true&limit=20&limitDate.unspecified=false&limitDateRange.end=${yesterday}&offset=0&order=true&projectId=90404&projectId=92327&projectId=106799&projectId=107506&projectId=215551&projectId=111843&projectId=111905&projectId=125699&projectId=139380&projectId=143275&projectId=154956&projectId=162798&projectId=164065&projectId=181478&projectId=182111&projectId=193241&projectId=198448&projectId=200798&projectId=213127&projectId=48115&simpleSearch=false&sort=LIMIT_DATE&startDate.unspecified=false&statusId=1&statusId=31202&statusId=31205&statusId=31211&statusId=31213&statusId=31215&statusId=31220&statusId=31229&statusId=31231&statusId=31235&statusId=32747&statusId=43839&statusId=43848&statusId=48521&statusId=50223&statusId=2&statusId=23368&statusId=31214&statusId=25086&statusId=25088&statusId=25090&statusId=6742&statusId=11614&statusId=12586&statusId=24098&statusId=31204&statusId=31230&statusId=38629&statusId=43840&statusId=12560&statusId=31212`
+})
+
+const previousBusinessDayTasksUrl = computed(() => {
+  const today = dayjs().format('YYYY/MM/DD')
+  const yesterday = dayjs().subtract(1, 'd').format('YYYY/MM/DD')
+  const threeDaysAgo = dayjs().subtract(3, 'd').format('YYYY/MM/DD')
+
+  return `https://valeur.backlog.jp/FindIssueAllOver.action?allOver=true&createdRange.begin=${dayjs().day() === 1 ? threeDaysAgo : yesterday}&createdRange.end=${today}&limit=20&limitDate.unspecified=false&offset=0&order=true&projectId=90404&projectId=92327&projectId=215551&projectId=106799&projectId=107506&projectId=111843&projectId=111905&projectId=125699&projectId=139380&projectId=143275&projectId=162798&projectId=164065&projectId=181478&projectId=182111&projectId=193241&projectId=198448&projectId=200798&simpleSearch=false&sort=LIMIT_DATE&startDate.unspecified=false&statusId=1&statusId=2&statusId=31202&statusId=31201&statusId=12560&statusId=31234&statusId=31235&statusId=31215&statusId=31214&statusId=12586&statusId=31231&statusId=31230&statusId=31213&statusId=6742&statusId=31212&statusId=31229&statusId=31228&statusId=31205&statusId=31204&statusId=31211&statusId=31210&statusId=11614&statusId=31220&statusId=24098&statusId=23368&statusId=25086&statusId=25088&statusId=25090&statusId=43839&statusId=43840&statusId=32747&statusId=38629&statusId=43848&statusId=48521&statusId=50223`
+})
+
+// (async () => {
+// const base = await generateBaseBacklogUrl()
+// const url = base.url
+// const mondayUrl = base.mondayUrl
+
+// const today = dayjs().format('YYYY/MM/DD')
+// const yesterday = date.subtract(1, 'd').format('YYYY/MM/DD')
+// const threeDaysAgo = date.subtract(3, 'd').format('YYYY/MM/DD')
+//
+// todayTasksUrl.value = `${url}limitDateRange.begin=${today}&limitDateRange.end=${today}`
+// overdueTasksUrl.value = `${url}limitDateRange.end=${yesterday}`
+// previousBusinessDayTasksUrl.value = `${url}createdRange.begin=${dayjs().day() === 1 ? threeDaysAgo : yesterday}&createdRange.end=${today}`
+// completeTasksUrl.value = mondayUrl
+//
+// })();
 </script>
