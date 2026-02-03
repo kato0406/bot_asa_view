@@ -226,17 +226,17 @@ const getYoutubeUrl = computed(() => {
 
   switch (date.day()) {
     case 1:
-      return 'https://www.youtube.com/embed/G6IR5nziFvI?start=4&end=255&autoplay=1'
+      return 'https://youtu.be/GVATVOtwmu0'
     case 2:
-      return 'https://www.youtube.com/embed/yM14vLOHJco?start=7&end=264&autoplay=1'
+      return 'https://youtu.be/NLQLuMmncHE'
     case 3:
-      return 'https://www.youtube.com/embed/RYh_BGDtc-c?start=3&end=210&autoplay=1'
+      return 'https://youtu.be/sl0cTmNEZGM'
     case 4:
-      return 'https://www.youtube.com/embed/oWHPQgdqVcQ?start=10&end=190&autoplay=1'
+      return 'https://youtu.be/GVATVOtwmu0'
     case 5:
-      return 'https://www.youtube.com/embed/SjmZGTU9tPM?start=8&end=220&autoplay=1'
+      return 'https://youtu.be/NLQLuMmncHE'
     default:
-      return 'https://www.youtube.com/embed/G6IR5nziFvI?start=4&end=255&autoplay=1'
+      return 'https://youtu.be/sl0cTmNEZGM'
   }
 })
 
