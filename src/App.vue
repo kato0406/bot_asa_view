@@ -19,24 +19,7 @@
       </div>
     </div>
     <div class="card w-50" v-if="page === 2">
-      <div class="card-header">① 出席確認</div>
-      <div class="card-body">
-        <p>
-          <a href="https://docs.google.com/spreadsheets/d/1SunBnF6VW01kVOve5EFyxIBU69G0cMOetKqyUcGXVGw/edit#gid=0"
-             target="_blank">https://docs.google.com/spreadsheets/d/1SunBnF6VW01kVOve5EFyxIBU69G0cMOetKqyUcGXVGw/edit#gid=0</a>
-        </p>
-        <p>
-          出席確認をしましょう<br>
-          欠席者がいる場合は下記のシートに⚪︎を入れてください<br>
-        </p>
-      </div>
-      <div class="card-footer text-end">
-        <button @click="prevPage" type="button" class="btn">前のページ</button>
-        <button @click="nextPage" type="button" class="btn">次のページ</button>
-      </div>
-    </div>
-    <div class="card w-50" v-if="page === 3">
-      <div class="card-header">② 当日期限のチケット確認</div>
+      <div class="card-header">① 当日期限のチケット確認</div>
       <div class="card-body">
         <p>
           <a target="_blank" :href="getTodayTasksUrl">チケットURL</a>
@@ -52,8 +35,8 @@
         <button @click="nextPage" type="button" class="btn">次のページ</button>
       </div>
     </div>
-    <div class="card w-50" v-if="page === 4">
-      <div class="card-header">③ 期限切れのチケット確認</div>
+    <div class="card w-50" v-if="page === 3">
+      <div class="card-header">② 期限切れのチケット確認</div>
       <div class="card-body">
         <p>
           <a target="_blank" :href="overdueTasksUrl">チケットURL</a>
@@ -71,8 +54,8 @@
         <button @click="nextPage" type="button" class="btn">次のページ</button>
       </div>
     </div>
-    <div class="card w-50" v-if="page === 5">
-      <div class="card-header">④ 前営業日作成のチケット確認</div>
+    <div class="card w-50" v-if="page === 4">
+      <div class="card-header">③ 前営業日作成のチケット確認</div>
       <div class="card-body">
         <p>
           <a target="_blank" :href="previousBusinessDayTasksUrl">チケットURL</a>
@@ -88,8 +71,8 @@
         <button @click="nextPage" type="button" class="btn">次のページ</button>
       </div>
     </div>
-    <div class="card w-50" v-if="page === 6">
-      <div class="card-header">⑤ 全体状況確認 ※月曜のみ確認</div>
+    <div class="card w-50" v-if="page === 5">
+      <div class="card-header">④ 全体状況確認 ※月曜のみ確認</div>
       <div class="card-body">
         <p>
 <!--          <a href="https://kato0406.github.io/bot_asa_view_vue" target="_blank">チケット集計ツール君</a><br/>-->
@@ -119,8 +102,40 @@ https://valeur.backlog.jp/alias/wiki/1247821" target="_blank">勉強会URL</a><b
         <button @click="nextPage" type="button" class="btn">次のページ</button>
       </div>
     </div>
+    <div class="card w-50" v-if="page === 6">
+      <div class="card-header">⑤ slackエラーチケット確認 ※金曜のみ確認</div>
+      <div class="card-body">
+        <p>
+          <a target="_blank" :href="slackTasksUrl">チケットURL</a>
+        </p>
+        <ul>
+          <li>上田さん確認お願いします</li>
+        </ul>
+      </div>
+      <div class="card-footer text-end">
+        <button @click="prevPage" type="button" class="btn">前のページ</button>
+        <button @click="nextPage" type="button" class="btn">次のページ</button>
+      </div>
+    </div>
     <div class="card w-50" v-if="page === 7">
-      <div class="card-header">⑥ 全体確認</div>
+      <div class="card-header">⑥ 出席確認</div>
+      <div class="card-body">
+        <p>
+          <a href="https://docs.google.com/spreadsheets/d/1SunBnF6VW01kVOve5EFyxIBU69G0cMOetKqyUcGXVGw/edit#gid=0"
+             target="_blank">https://docs.google.com/spreadsheets/d/1SunBnF6VW01kVOve5EFyxIBU69G0cMOetKqyUcGXVGw/edit#gid=0</a>
+        </p>
+        <p>
+          出席確認をしましょう<br>
+          欠席者がいる場合は下記のシートに⚪︎を入れてください<br>
+        </p>
+      </div>
+      <div class="card-footer text-end">
+        <button @click="prevPage" type="button" class="btn">前のページ</button>
+        <button @click="nextPage" type="button" class="btn">次のページ</button>
+      </div>
+    </div>
+    <div class="card w-50" v-if="page === 8">
+      <div class="card-header">⑦ 全体確認</div>
       <div class="card-body">
         <p>何か確認ある方はいますか</p>
       </div>
@@ -129,8 +144,8 @@ https://valeur.backlog.jp/alias/wiki/1247821" target="_blank">勉強会URL</a><b
         <button @click="nextPage" type="button" class="btn">次のページ</button>
       </div>
     </div>
-    <div class="card w-50" v-if="page === 8">
-      <div class="card-header">⑦ 運動</div>
+    <div class="card w-50" v-if="page === 9">
+      <div class="card-header">⑧ 運動</div>
       <div class="card-body">
         <p>運動動画の共有</p>
         <p>
@@ -192,7 +207,7 @@ const completeTasksUrl = ref()
 const nextPage = () => {
   const url = new URL(window.location.href);
 
-  if (page.value === 8) {
+  if (page.value === 9) {
     page.value = 1
     url.searchParams.set('page', page.value.toString());
     window.history.pushState({}, '', url.href);
@@ -209,7 +224,7 @@ const prevPage = () => {
   const url = new URL(window.location.href);
 
   if (page.value === 1) {
-    page.value = 8
+    page.value = 9
     url.searchParams.set('page', page.value.toString());
     window.history.pushState({}, '', url.href);
 
@@ -260,6 +275,10 @@ const previousBusinessDayTasksUrl = computed(() => {
   const threeDaysAgo = dayjs().subtract(3, 'd').format('YYYY/MM/DD')
 
   return `https://valeur.backlog.jp/FindIssueAllOver.action?allOver=true&createdRange.begin=${dayjs().day() === 1 ? threeDaysAgo : yesterday}&createdRange.end=${today}&limit=20&limitDate.unspecified=false&offset=0&order=true&${baseQuery}`
+})
+
+const slackTasksUrl = computed(() => {
+  return `https://valeur.backlog.jp/FindIssueAllOver.action?allOver=true&limit=20&limitDate.unspecified=false&offset=0&order=true&query=slack%E3%82%A8%E3%83%A9%E3%83%BC&${baseQuery}`
 })
 
 // (async () => {
