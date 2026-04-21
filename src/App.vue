@@ -108,9 +108,6 @@ https://valeur.backlog.jp/alias/wiki/1247821" target="_blank">勉強会URL</a><b
         <p>
           <a target="_blank" :href="slackTasksUrl">チケットURL</a>
         </p>
-        <ul>
-          <li>上田さん確認お願いします</li>
-        </ul>
       </div>
       <div class="card-footer text-end">
         <button @click="prevPage" type="button" class="btn">前のページ</button>
@@ -255,7 +252,7 @@ const getYoutubeUrl = computed(() => {
   }
 })
 
-const baseQuery = 'projectId=48115&projectId=90404&projectId=92327&projectId=106799&projectId=107506&projectId=111843&projectId=111905&projectId=125699&projectId=139380&projectId=143275&projectId=154956&projectId=162798&projectId=164065&projectId=181478&projectId=182111&projectId=193241&projectId=198448&projectId=200798&projectId=213127&projectId=215551&projectId=219378&projectId=219435&projectId=220231&projectId=223194&simpleSearch=false&sort=ASSIGNER&startDate.unspecified=false&statusId=1&statusId=31202&statusId=31205&statusId=31211&statusId=31213&statusId=31215&statusId=31220&statusId=31229&statusId=31231&statusId=31235&statusId=32747&statusId=43839&statusId=43848&statusId=48521&statusId=50223&statusId=61831&statusId=63448&statusId=66707&statusId=66763&statusId=67570&statusId=2&statusId=23368&statusId=31214&statusId=66708&statusId=66764&statusId=25086&statusId=25088&statusId=25090&statusId=6742&statusId=11614&statusId=12560&statusId=12586&statusId=24098&statusId=25109&statusId=31204&statusId=31230&statusId=38629&statusId=43840&statusId=66699&statusId=67460&statusId=25110&statusId=31212&statusId=25107&statusId=25108&statusId=25111&statusId=25148&statusId=16364&statusId=70106';
+const baseQuery = 'projectId=48115&projectId=90404&projectId=92327&projectId=104575&projectId=106799&projectId=107506&projectId=111843&projectId=111905&projectId=125699&projectId=127836&projectId=139380&projectId=143275&projectId=154956&projectId=162798&projectId=164065&projectId=181478&projectId=182111&projectId=193241&projectId=198448&projectId=200798&projectId=213127&projectId=215551&projectId=219378&projectId=219435&projectId=220231&projectId=223194&projectId=127937&simpleSearch=false&sort=ASSIGNER&startDate.unspecified=false&statusId=1&statusId=31202&statusId=31205&statusId=31211&statusId=31213&statusId=31215&statusId=31220&statusId=31229&statusId=31231&statusId=31235&statusId=32747&statusId=43839&statusId=43848&statusId=48521&statusId=50223&statusId=51607&statusId=61831&statusId=63448&statusId=66707&statusId=66763&statusId=67570&statusId=70106&statusId=2&statusId=23368&statusId=31214&statusId=66708&statusId=66764&statusId=25086&statusId=25088&statusId=25090&statusId=6742&statusId=11614&statusId=12560&statusId=12586&statusId=24098&statusId=25109&statusId=31204&statusId=31230&statusId=38629&statusId=43840&statusId=66699&statusId=67460&statusId=25110&statusId=31212&statusId=31217&statusId=25107&statusId=25108&statusId=25111&statusId=25148&statusId=16364';
 
 const getTodayTasksUrl = computed(() => {
   const today = dayjs().format('YYYY/MM/DD')
