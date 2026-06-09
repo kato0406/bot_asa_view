@@ -159,7 +159,6 @@ https://valeur.backlog.jp/alias/wiki/1247821" target="_blank">勉強会URL</a><b
 </template>
 
 <script setup>
-// import axios from "axios";
 import dayjs from "dayjs";
 import {computed, ref} from "vue";
 
@@ -167,39 +166,6 @@ const query = new URLSearchParams(window.location.search);
 
 const page = ref(Number(query.get('page') ?? 1))
 const completeTasksUrl = ref()
-// const backlogUrl = 'https://valeur.backlog.jp/FindIssueAllOver.action?sort=LIMIT_DATE&order=false&simpleSearch=false&allOver=true&startDate.unspecified=false&limitDate.unspecified=false&';
-// const baseApiSheetUrl = 'https://sheets.googleapis.com/v4/spreadsheets/1AB2-Z7k3JQf8yGnk74SofcnXCDQVowOCXNKqqoPVGus/values/?sheet!?range?key=AIzaSyBhzOrlCWAfu2nBXzE6-YMbk4ktEE8Fbx4';
-
-// const generateGetSheetUrl = (sheet, range) => {
-//   return baseApiSheetUrl.replace('?sheet', sheet).replace('?range', range)
-// }
-
-// const generateBaseBacklogUrl = async () => {
-//   const statusValues = (await axios.get(generateGetSheetUrl('URL', 'E2:G1000'))).data.values
-//   const projectValues = (await axios.get(generateGetSheetUrl('URL', 'A2:C1000'))).data.values
-//   const statusIds = []
-//   const projectIds = []
-//   const completeStatusIds = []
-//
-//   for (const status of statusValues) {
-//     if (status[2] === '0') {
-//       completeStatusIds.push(status[0])
-//     } else {
-//       statusIds.push(status[0])
-//     }
-//   }
-//
-//   for (const project of projectValues) {
-//     if (project[2] === '0') continue
-//
-//     projectIds.push(project[0])
-//   }
-//
-//   return {
-//     url: `${backlogUrl}${projectIds.map(id => `projectId=${id}&`).join('')}${statusIds.map(id => `statusId=${id}&`).join('')}`,
-//     mondayUrl: `${backlogUrl}${projectIds.map(id => `projectId=${id}&`).join('')}${completeStatusIds.map(id => `statusId=${id}&`).join('')}`
-//   }
-// }
 
 const nextPage = () => {
   const url = new URL(window.location.href);
@@ -252,7 +218,27 @@ const getYoutubeUrl = computed(() => {
   }
 })
 
-const baseQuery = 'projectId=48115&projectId=90404&projectId=92327&projectId=104575&projectId=106799&projectId=107506&projectId=111843&projectId=111905&projectId=125699&projectId=127836&projectId=139380&projectId=143275&projectId=154956&projectId=162798&projectId=164065&projectId=181478&projectId=182111&projectId=193241&projectId=198448&projectId=200798&projectId=213127&projectId=215551&projectId=219378&projectId=219435&projectId=220231&projectId=223194&projectId=127937&simpleSearch=false&sort=ASSIGNER&startDate.unspecified=false&statusId=1&statusId=31202&statusId=31205&statusId=31211&statusId=31213&statusId=31215&statusId=31220&statusId=31229&statusId=31231&statusId=31235&statusId=32747&statusId=43839&statusId=43848&statusId=48521&statusId=50223&statusId=51607&statusId=61831&statusId=63448&statusId=66707&statusId=66763&statusId=67570&statusId=70106&statusId=2&statusId=23368&statusId=31214&statusId=66708&statusId=66764&statusId=25086&statusId=25088&statusId=25090&statusId=6742&statusId=11614&statusId=12560&statusId=12586&statusId=24098&statusId=25109&statusId=31204&statusId=31230&statusId=38629&statusId=43840&statusId=66699&statusId=67460&statusId=25110&statusId=31212&statusId=31217&statusId=25107&statusId=25108&statusId=25111&statusId=25148&statusId=16364&statusId=31203&statusId=53166';
+const projectIds = [
+  48115, 90404, 92327, 104575, 106799, 107506, 111843, 111905, 125699, 127836,
+  139380, 143275, 154956, 162798, 164065, 181478, 182111, 193241, 198448, 200798,
+  213127, 215551, 219378, 219435, 220231, 223194, 127937,
+]
+
+const statusIds = [
+  1, 31202, 31205, 31211, 31213, 31215, 31220, 31229, 31231, 31235, 32747,
+  43839, 43848, 48521, 50223, 51607, 61831, 63448, 66707, 66763, 67570, 70106,
+  2, 23368, 31214, 66708, 66764, 25086, 25088, 25090, 6742, 11614, 12560,
+  12586, 24098, 25109, 31204, 31230, 38629, 43840, 66699, 67460, 25110, 31212,
+  31217, 25107, 25108, 25111, 25148, 16364, 31203, 53166,
+]
+
+const baseQuery = [
+  ...projectIds.map(id => `projectId=${id}`),
+  'simpleSearch=false',
+  'sort=ASSIGNER',
+  'startDate.unspecified=false',
+  ...statusIds.map(id => `statusId=${id}`),
+].join('&');
 
 const getTodayTasksUrl = computed(() => {
   const today = dayjs().format('YYYY/MM/DD')
@@ -277,20 +263,4 @@ const previousBusinessDayTasksUrl = computed(() => {
 const slackTasksUrl = computed(() => {
   return `https://valeur.backlog.jp/FindIssueAllOver.action?allOver=true&limit=20&limitDate.unspecified=false&offset=0&order=true&query=slack%E3%82%A8%E3%83%A9%E3%83%BC&${baseQuery}`
 })
-
-// (async () => {
-// const base = await generateBaseBacklogUrl()
-// const url = base.url
-// const mondayUrl = base.mondayUrl
-
-// const today = dayjs().format('YYYY/MM/DD')
-// const yesterday = date.subtract(1, 'd').format('YYYY/MM/DD')
-// const threeDaysAgo = date.subtract(3, 'd').format('YYYY/MM/DD')
-//
-// todayTasksUrl.value = `${url}limitDateRange.begin=${today}&limitDateRange.end=${today}`
-// overdueTasksUrl.value = `${url}limitDateRange.end=${yesterday}`
-// previousBusinessDayTasksUrl.value = `${url}createdRange.begin=${dayjs().day() === 1 ? threeDaysAgo : yesterday}&createdRange.end=${today}`
-// completeTasksUrl.value = mondayUrl
-//
-// })();
 </script>
